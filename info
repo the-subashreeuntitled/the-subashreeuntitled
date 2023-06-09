@@ -1,0 +1,18 @@
+##Use the following Python code to read the JSON data from the file and store it in a dictionary named ex5
+
+import json
+
+# Read the JSON data from the file
+with open("ex5.json", "r") as file:
+    ex5 = json.load(file)
+
+#Add the "Coffee" batter for the "Old Fashioned" donut in the dictionary ex5
+# Add the new batter
+ex5["batters"]["batter"].append({
+    "id": "1005",
+    "type": "Coffee"
+})
+##Overwrite the contents of the "ex5.json" file with the updated data:
+# Write the updated JSON data back to the file
+with open("ex5.json", "w") as file:
+    json.dump(ex5, file)
